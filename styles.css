@@ -19,195 +19,370 @@
   --white: hsl(0, 0%, 100%);
 }
 
+/* MOBILE SCREEN */
 body {
   font-family: 'League Spartan', 'Courier New', Courier, monospace;
-  padding: 3rem 2rem;
-}
-
-p {
   font-size: 15px;
+  background: url(./images/bg-pattern-top-mobile.svg) no-repeat, url(./images/bg-pattern-bottom-mobile.svg) no-repeat bottom;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
 }
 
 main {
-  background-color: var(--white);
-  /* border: 1px solid black; */
+  padding: 3rem 1.5rem;
 }
+
+/* MARKETING DESCRIPTION */
 
 .description {
   text-align: center;
 }
 
-.description h1{
-  font-size: 2.75rem;
-  text-align: center;
+.description h1 {
+  font-size: 3rem;
   color: var(--very-dark-magenta);
-  padding: 0.75rem;
+  font-weight: 700;
+  line-height: 0.8;
+  margin-bottom: 1.5rem;
 }
 
 .description p {
-  font-weight: 700;
+  font-size: 1.2rem;
   color: var(--dark-grayish-magenta);
-  padding: 1rem ;
-  line-height: 1.6rem;
+  line-height: 1.2;
 }
+
+/* STAR RATINGS */
 
 .ratings {
-  max-width: 100%;
-  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.75rem;
 }
 
-.ratings article{
+.ratings article {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 0.3rem;
   background-color: var(--light-grayish-magenta);
-  border-radius: .5rem;
   padding: 1rem;
-  margin: 1rem 0rem;
-  border: 1px solid black;
+  margin-top: 1rem;
+  border: solid 1px black;
 }
 
-.ratings article .stars img {
-  padding: 0 0.15rem;
+.ratings article img {
+  margin-bottom: .5rem;
+  gap: 0.25rem;
 }
 
-.ratings article p {
+.ratings p {
+  font-size: 1rem;
   font-weight: 700;
   color: var(--very-dark-magenta);
-  padding-top: 0.5rem;
 }
 
-.reference article {
+/* REVIEWS */
+
+.reviews_container {
+  margin: 3rem 0;
+}
+
+.reviews_container article {
+  margin: 1rem 0;
+  padding: 2rem;
   background-color: var(--very-dark-magenta);
-  border-radius: 0.45rem;
-  margin: 1rem 0rem;
-  padding: 1.75rem;
+  border-radius: 0.5rem;
 }
 
-.reference h3 {
+.reviews_container .profile {
+  display: flex;
+}
+
+.reviews_container h2 {
   color: var(--white);
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
 }
 
-.reference h4 {
+.reviews_container h3 {
   color: var(--soft-pink);
 }
 
-.reference article .profile {
-  display: flex;
-  align-items: center;
-  align-content: flex-start;
-  padding-bottom: 1.5rem;
-}
-
-.reference article img {
+.reviews_container .profile img {
   border-radius: 50%;
-  width: 2.75rem;
-  margin-right: 1.5rem;
+  width: 2.5rem;
+  margin-right: 1.25rem;
 }
 
-.reference article p {
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1.6;
+.reviews_container article p {
+  margin-top: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--light-grayish-magenta);
+  line-height: 1.5rem;
 }
 
-@media (min-width: 821px) {
+/* IPAD MINI LANDSCAPE */
+
+@media (min-width: 1020px) {
 
   body {
-    display: flex;
+    background: url(./images/bg-pattern-bottom-mobile.svg) no-repeat right bottom;
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  /* MARKETING DESCRIPTION */
+  
+  .description {
+    width: 80%;
+    text-align: left;
+  }
+  
+  /* STAR RATINGS */
+
+  .ratings {
+    width: 80%;
+    margin: 0;
+  }
+
+  .ratings article {
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    padding: 0;
+  }
+
+  .ratings article .stars{
+    margin-right: 1rem;
+  }
+
+  .ratings article img {
+    margin-bottom: 0rem;
+    margin-right: 0.25rem;
+  }
+
+  .rating_2 {
+    margin-left: 12%;
+  }
+
+  .rating_3 {
+    margin-left: 24%;
+  }
+
+  /* REVIEWS */
+
+  .reviews_container {
+    display: flex;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    margin: 0;
+    padding: 2rem 0;
+  }
+
+  .reviews_container article {
+    margin: 1rem 0 0 0;
+    padding: 1.5rem;
+    height: 95%;
+    margin-right: 1rem;
+  }
+
+  .reviews_container .reviews_1{
+    margin-top: -2rem;
+  }
+  .reviews_container .reviews_2{
+    margin-top: 0.5rem;
+  }
+  .reviews_container .reviews_3{
+    margin-top: 2.5rem;
+    margin-right: 0;
+  }
+
+}
+
+/* DESKTOP SCREEN AT 1400 PX */
+
+@media (min-width: 1400px) {
+
+  body {
+    max-height: 100vh;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(./images/bg-pattern-top-desktop.svg) no-repeat, url(./images/bg-pattern-bottom-desktop.svg) no-repeat right bottom;
   }
 
   main {
-    width: 80%;
-    min-height: 100vh;
-    position: relative;
-    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1.5fr;
+    padding: 4rem;
   }
 
+  /* MARKETING DESCRIPTION */
+  
   .description {
-    position: absolute;
-    width: 45%;
+    width: 70%;
     text-align: left;
   }
 
   .description h1 {
+    width: 70%;
+  }
+    
+  /* REVIEWS */
+
+  .reviews_container {
+    display: flex;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    margin: 0;
+    padding: 2rem 0;
+  }
+
+  .reviews_container article {
+    margin: 1rem 0 0 0;
+    padding: 2rem;
+    height: 80%;
+    margin-right: 1rem;
+  }
+
+  .reviews_container .reviews_1{
+    margin-top: 2rem;
+  }
+  .reviews_container .reviews_2{
+    margin-top: 3.2rem;
+  }
+  .reviews_container .reviews_3{
+    margin-top: 4.4rem;
+    margin-right: 0;
+  }
+
+}
+
+/* DESKTOP AT 1800PX */
+
+@media (min-width: 1800px) {
+  
+  body {
+    background: url(./images/bg-pattern-top-desktop.svg) no-repeat, url(./images/bg-pattern-bottom-desktop.svg) no-repeat right bottom;
+  }
+
+  main {
+    padding: 5rem 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+  }
+
+  /* MARKETING DESCRIPTION */
+  
+  .description {
+    width: 80%;
     text-align: left;
   }
 
-  .ratings {
-    width: 80%;
-    position: absolute;
-    right: 0;
+  .description h1 {
+    font-size: 3.5rem;
+    width: 90%;
   }
 
-  .rating_1 {
-    position: absolute;
-    top: 0;
-    right: 10rem;
-  }
-
-  .rating_2 {
-    position: absolute;
-    top: 5rem;
-    right: 5rem;
-  }
-
-  .rating_3 {
-    position: absolute;
-    top: 10rem;
-    right: 0;
+  .description p {
+    font-size: 1.4rem;
+    line-height: 1.6;
   }
   
-  .ratings article {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    background-color: var(--light-grayish-magenta);
-    border-radius: .5rem;
-    border: 1px solid black;
-  }
+  /* STAR RATINGS */
 
-  .ratings article p {
-    font-weight: 700;
-    color: var(--very-dark-magenta);
-    padding-top: 0;
-    padding-left: .75rem;
-  }
-
-  .reference {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 20rem;
-    bottom: 4rem;
-  }
-
-  .reference article {
-    position: absolute;
+  .ratings {
+    width: 60%;
     margin: 0;
   }
 
-  .reference .ref_1 {
-    top: 0;
-    left: 0;
-    width: 32%;
+  .ratings article {
+    padding: 1.8rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 
-  .reference .ref_2 {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 32%;
+  .ratings article p {
+    font-size: 1.4rem;
   }
 
-  .reference .ref_3 {
-    bottom: 0rem;
-    right: 0rem;
-    width: 32%;
+  .ratings article .stars{
+    margin-right: 1rem;
+  }
+
+  .ratings article img {
+    width: 1.4rem;
+    height: auto;
+    margin-bottom: 0rem;
+    margin-right: 0.5rem;
+  }
+
+  .rating_2 {
+    margin-left: 33.25%;
+  }
+
+  .rating_3 {
+    margin-left: 66.5%;
+  }
+  
+  /* REVIEWS */
+
+  .reviews_container {
+    display: flex;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    margin: 0;
+    padding: 2rem 0;
+  }
+
+  .reviews_container article {
+    margin: 1rem 0 0 0;
+    padding: 2rem;
+    height: 85%;
+    margin-right: 2.5rem;
+  }
+
+  .reviews_container article h2{
+    font-size: 1.5rem;
+  }
+
+  .reviews_container article h3{
+    font-size: 1.4rem;
+  }
+
+  .reviews_container article p {
+    margin-top: 1.25rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--light-grayish-magenta);
+    line-height: 1.8rem;
+  }
+
+  .reviews_container .profile img {
+    border-radius: 50%;
+    width: auto;
+    height: 3.5rem;
+    margin-right: 1.25rem;
+  }
+
+  .reviews_container .reviews_1{
+    margin-top: 2rem;
+  }
+  .reviews_container .reviews_2{
+    margin-top: 3.2rem;
+  }
+  .reviews_container .reviews_3{
+    margin-top: 4.4rem;
+    margin-right: 0;
   }
 }
